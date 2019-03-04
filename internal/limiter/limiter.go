@@ -53,6 +53,8 @@ func (r *rateLimiter) limiter() {
 				case <-r.shutdown:
 					return
 				}
+			} else {
+				time.Sleep(50 * time.Millisecond)
 			}
 		}
 	}
